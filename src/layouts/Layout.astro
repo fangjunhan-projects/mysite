@@ -148,6 +148,50 @@ const base = (import.meta.env.BASE_URL || '/').replace(/\/?$/, '');
     border-bottom: 1px solid var(--border);
   }
 
+  .content :global(.collapsible-section) {
+    margin-top: 1rem;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .content :global(.collapsible-section summary) {
+    font-size: 1.35rem !important;
+    font-weight: 700;
+    line-height: 1.4;
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+    list-style: none;
+    background: var(--bg);
+    color: var(--text);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .content :global(.collapsible-section summary::-webkit-details-marker) {
+    display: none;
+  }
+
+  .content :global(.collapsible-section summary::before) {
+    content: '▶ ';
+    display: inline-block;
+    margin-right: 0.35rem;
+    transition: transform 0.2s ease;
+  }
+
+  .content :global(.collapsible-section[open] summary::before) {
+    transform: rotate(90deg);
+  }
+
+  .content :global(.collapsible-section summary:hover) {
+    opacity: 0.9;
+  }
+
+  .content :global(.collapsible-section > ul),
+  .content :global(.collapsible-section > p) {
+    margin: 0;
+    padding: 1rem 1.25rem;
+  }
+
   .content :global(h2:first-child) {
     margin-top: 0;
   }
