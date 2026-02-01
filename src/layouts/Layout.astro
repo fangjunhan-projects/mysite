@@ -141,13 +141,14 @@ const base = (import.meta.env.BASE_URL || '/').replace(/\/?$/, '');
   }
 
   .content :global(h2) {
-    font-size: 1.35rem;
+    font-size: 1.75rem;
     margin-top: 2rem;
     margin-bottom: 0.75rem;
     padding-bottom: 0.25rem;
     border-bottom: 1px solid var(--border);
   }
 
+  details.collapsible-section,
   .content :global(.collapsible-section) {
     margin-top: 1rem;
     border: 1px solid var(--border);
@@ -155,8 +156,9 @@ const base = (import.meta.env.BASE_URL || '/').replace(/\/?$/, '');
     overflow: hidden;
   }
 
+  details.collapsible-section summary,
   .content :global(.collapsible-section summary) {
-    font-size: 1.35rem !important;
+    font-size: 1.75rem !important;
     font-weight: 700;
     line-height: 1.4;
     padding: 0.75rem 1rem;
@@ -167,10 +169,12 @@ const base = (import.meta.env.BASE_URL || '/').replace(/\/?$/, '');
     border-bottom: 1px solid var(--border);
   }
 
+  details.collapsible-section summary::-webkit-details-marker,
   .content :global(.collapsible-section summary::-webkit-details-marker) {
     display: none;
   }
 
+  details.collapsible-section summary::before,
   .content :global(.collapsible-section summary::before) {
     content: '▶ ';
     display: inline-block;
@@ -178,14 +182,18 @@ const base = (import.meta.env.BASE_URL || '/').replace(/\/?$/, '');
     transition: transform 0.2s ease;
   }
 
+  details.collapsible-section[open] summary::before,
   .content :global(.collapsible-section[open] summary::before) {
     transform: rotate(90deg);
   }
 
+  details.collapsible-section summary:hover,
   .content :global(.collapsible-section summary:hover) {
     opacity: 0.9;
   }
 
+  details.collapsible-section > ul,
+  details.collapsible-section > p,
   .content :global(.collapsible-section > ul),
   .content :global(.collapsible-section > p) {
     margin: 0;
