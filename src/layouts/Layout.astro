@@ -28,6 +28,7 @@ const base = (import.meta.env.BASE_URL || '/').replace(/\/?$/, '');
           width="200"
           height="200"
         />
+        <p class="github-link"><a href="https://github.com/fangjunhan-projects" target="_blank" rel="noopener noreferrer">GitHub</a></p>
         <p class="tagline">Trust in the you of now</p>
       </header>
       <main class="content">
@@ -111,6 +112,20 @@ const base = (import.meta.env.BASE_URL || '/').replace(/\/?$/, '');
     object-fit: cover;
     display: block;
     margin: 0 auto 1rem;
+  }
+
+  .github-link {
+    margin: 0 0 0.5rem;
+    font-size: 0.875rem;
+  }
+
+  .github-link a {
+    color: var(--link);
+    text-decoration: none;
+  }
+
+  .github-link a:hover {
+    text-decoration: underline;
   }
 
   .tagline {
